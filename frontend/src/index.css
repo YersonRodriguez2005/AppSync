@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+/* 1. ESTA ES LA LÍNEA MÁGICA PARA TAILWIND v4:
+   Le decimos: "Activa el dark mode cuando el tag <html> o un padre tenga la clase .dark" */
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* --- Paleta personalizada AppSync --- */
+  --color-brand-accent: #3B82F6;
+  --color-brand-accent-dark: #60A5FA;
+  --color-brand-success: #10B981;
+
+  /* --- La magia Soft UI (Neumorfismo) --- */
+  --shadow-soft-light: -8px -8px 16px #FFFFFF, 8px 8px 16px #D1D9E6;
+  --shadow-soft-light-sm: -4px -4px 8px #FFFFFF, 4px 4px 8px #D1D9E6;
+  --shadow-soft-light-inset: inset -4px -4px 8px #FFFFFF, inset 4px 4px 8px #D1D9E6;
+
+  /* --- Sombras Soft UI adaptadas para el modo oscuro --- */
+  --shadow-soft-dark: -6px -6px 12px rgba(255, 255, 255, 0.04), 6px 6px 16px rgba(0, 0, 0, 0.6);
+  --shadow-soft-dark-sm: -3px -3px 6px rgba(255, 255, 255, 0.04), 3px 3px 8px rgba(0, 0, 0, 0.6);
+  --shadow-soft-dark-inset: inset -3px -3px 6px rgba(255, 255, 255, 0.05), inset 3px 3px 6px rgba(0, 0, 0, 0.5);
+
+  /* --- Desenfoque de vidrio (Glassmorphism) --- */
+  --blur-glass: 16px;
+}
+
+/* --- Estilos base del Body --- */
+@layer base {
+  body {
+    @apply bg-[#F0F4F8] dark:bg-[#0B1120] text-slate-900 dark:text-slate-50 transition-colors duration-300 font-sans antialiased;
+  }
+}
+
+/* --- Clases Utilitarias Personalizadas --- */
+@utility glass-card {
+  @apply bg-white/55 dark:bg-slate-900/65 backdrop-blur-md border border-white/80 dark:border-white/10 rounded-3xl transition-all duration-300;
+}
+
+@utility soft-btn-light {
+  @apply bg-[#E2E8F0] shadow-soft-light hover:shadow-soft-light-sm active:shadow-soft-light-inset text-slate-800 font-medium px-6 py-3 rounded-2xl transition-all duration-200;
+}
+
+@utility soft-btn-dark {
+  @apply bg-[#1E293B] shadow-soft-dark hover:shadow-soft-dark-sm active:shadow-soft-dark-inset text-slate-100 font-medium px-6 py-3 rounded-2xl transition-all duration-200;
+}
