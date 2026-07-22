@@ -18,12 +18,12 @@ const PORT = process.env.PORT || 5000;
 
 app.use(helmet());
 
-// CORS: Permite que nuestro frontend en Vite (puerto 5173 por defecto) haga peticiones a este servidor
+// CORS: Permite que nuestro frontend en Vite haga peticiones a este servidor
 const corsOptions = {
   origin:
     process.env.NODE_ENV === "production"
-      ? "https://tudominio-appsync.com"
-      : ["http://localhost:5173", "http://localhost:3000", "https://app-sync-store.vercel.app/"],
+      ? "https://app-sync-store.vercel.app"
+      : ["http://localhost:5173", "http://localhost:3000", "https://app-sync-store.vercel.app"], // <-- CORREGIDO: Sin barra al final
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"],
 };
