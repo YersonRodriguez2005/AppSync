@@ -5,8 +5,8 @@ import { X, Send, Sparkles, Code, DollarSign, CheckCircle2, AlertCircle, Loader2
 import { SoftButton } from '../common/SoftButton';
 import { sendCustomAppProposal } from '../../services/leadService';
 
-const PLATFORMS = ["Móvil (Android/iOS)", "Web App / Cloud", "Escritorio (Win/Mac)", "Sistema Híbrido"];
-const BUDGETS = ["< $500 USD", "$500 - $1,500 USD", "$1,500 - $5,000 USD", "+ $5,000 USD / A convenir"];
+const PLATFORMS = ["Móvil (Android/iOS)", "Web App", "Sistema Híbrido/Web-App"];
+const BUDGETS = ["< $100.000 COP", "$100.000 - $500.000 COP", "$500.000 - $1.000.000 COP", "+ $1,000.000 COP / A convenir"];
 
 export const CustomAppModal = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
