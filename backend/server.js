@@ -23,7 +23,7 @@ const corsOptions = {
   origin:
     process.env.NODE_ENV === "production"
       ? "https://tudominio-appsync.com"
-      : ["http://localhost:5173", "http://localhost:3000"],
+      : ["http://localhost:5173", "http://localhost:3000", "https://app-sync-store.vercel.app/"],
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"],
 };
